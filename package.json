@@ -1,0 +1,30 @@
+{
+  "name": "lcloud-427-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "bin": {
+    "list-objects": "bin/list-objects"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-random-recruitment-name/lcloud-427-ts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-random-recruitment-name/lcloud-427-ts/issues"
+  },
+  "homepage": "https://github.com/a-random-recruitment-name/lcloud-427-ts#readme",
+  "dependencies": {
+    "aws-sdk": "^2.483.0",
+    "dotenv": "^8.0.0",
+    "esm": "^3.2.25"
+  }
+}
