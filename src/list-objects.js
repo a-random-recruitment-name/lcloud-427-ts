@@ -21,7 +21,7 @@ export async function listObjects() {
   }
 
   for (const entry of bucketDefinition.Contents) {
-    process.stdout.write(JSON.stringify(entry.Key));
+    process.stdout.write(`Filename: ${JSON.stringify(entry.Key)}\n`);
   }
 
   return;

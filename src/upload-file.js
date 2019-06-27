@@ -18,11 +18,11 @@ export async function uploadFile(args) {
   };
 
   try {
-    process.stdout.write(`Staring file upload at ${Date.now()}`);
+    process.stdout.write(`Staring file upload at ${new Date()}\n`);
     await s3.putObject(params).promise();
-    process.stdout.write(`Finished file upload at ${Date.now()}`);
+    process.stdout.write(`Finished file upload at ${new Date()}\n`);
   } catch (err) {
-    process.stderr.write(`Failed to upload file to s3: ${err}`);
+    process.stderr.write(`Failed to upload file to s3: ${err}\n`);
   }
 
   return;
