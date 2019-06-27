@@ -6,5 +6,4 @@ export const s3 = new AWS.S3({
   accessKeyId: config.AWS_ACCESS_KEY_ID,
   secretAccessKey: config.AWS_SECRET_ACCESS_KEY
 });
-
 export const bucketName = config.AWS_BUCKET_NAME

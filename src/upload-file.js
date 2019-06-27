@@ -9,10 +9,8 @@ export async function uploadFile(args) {
     return process.stderr.write("You need to provide path to file");
   }
 
-  const Key = `random-path-${Math.floor(Math.random() * 20)}`;
-  console.log(path.relative(pathToFile))
-  const file = fs.readFileSync(path.relative(pathToFile))
-
+  const Key = `random-file-name-${Math.floor(Math.random() * 20)}`;
+  const file = fs.readFileSync(pathToFile)
   const params = {
     Bucket: bucketName,
     Key,
@@ -21,13 +19,11 @@ export async function uploadFile(args) {
 
   try {
     process.stdout.write(`Staring file upload at ${Date.now()}`);
-
     await s3.putObject(params).promise();
+    process.stdout.write(`Finished file upload at ${Date.now()}`);
   } catch (err) {
     process.stderr.write(`Failed to upload file to s3: ${err}`);
   }
-
-  process.stdout.write(`Finished file upload at ${Date.now()}`);
 
   return;
 }

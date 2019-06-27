@@ -8,18 +8,20 @@ export async function listObjects() {
     })
     .promise();
 
-  if (!bucketDefinition.IsTruncated) {
+  if (bucketDefinition.IsTruncated) {
     process.stdout.write("Bucket was truncated");
+
     return;
   }
 
   if (bucketDefinition.Contents === []) {
     process.stdout.write("Bucket is empty");
+
     return;
   }
 
-  for (entry of bucketDefinition.Contents) {
-    process.stdout.write(JSON.stringify(entry));
+  for (const entry of bucketDefinition.Contents) {
+    process.stdout.write(JSON.stringify(entry.Key));
   }
 
   return;
