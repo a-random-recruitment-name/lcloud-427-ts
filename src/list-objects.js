@@ -1,16 +1,10 @@
-import * as AWS from "aws-sdk";
 import { config } from "../config/config";
-
-const s3 = new AWS.S3({
-  region: config.AWS_REGION,
-  accessKeyId: config.AWS_ACCESS_KEY_ID,
-  secretAccessKey: config.AWS_SECRET_ACCESS_KEY
-});
+import { bucketName, s3 } from "../config/bucket";
 
 export async function listObjects() {
   const bucketDefinition = await s3
     .listObjectsV2({
-      Bucket: config.AWS_BUCKET_NAME
+      Bucket: bucketName
     })
     .promise();
 
